@@ -48,7 +48,7 @@ public class Main {
             }
             System.out.println("El importe a pagar es: " + precioAux);
 
-            System.out.println("desea agregar nuevos productos? (s/n)");
+            System.out.println("desea agregar nuevos productos al registro? (s/n)");
             Scanner RTA3 = new Scanner(System.in);
             RTAW2 = RTA3.nextLine();
         }
