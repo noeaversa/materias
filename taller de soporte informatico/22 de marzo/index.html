@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <p id="nav">Noelia Aversa 5°C</p>
+    </nav>
+    <div id="materiasDiv">
+        <div>
+            <img class="menuToggle" src="menu.png" alt="menu">
+            <a class="Materias">Taller de soporte informatico</a>
+        </div>
+        <div>
+            <img class="menuToggle" src="menu.png" alt="menu">
+            <a class="Materias">Laboratorio orientado a objetos</a>
+            <div>
+                <p class="fechasLabo" >22 de marzo</p>
+                <p class="fechasLabo">16 de marzo</p>
+                <p class="fechasLabo">9 de marzo</p>
+                <p class="fechasLabo">8 de marzo</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $(Image).click(function() {
+    $(".fechasLabo").toggle();
+    });
+    </script>
+</body>
+</html>
