@@ -1,18 +1,14 @@
 
-import com.company.Persona;
-
 import java.util.ArrayList;
 
 public class sistemaRegistroPersonas {
-    //private ArrayList<Character> ABM = new ArrayList<>();
-    private ArrayList<Persona> personas = new ArrayList<>();
+    private ArrayList<Persona> personas;
 
-    public sistemaRegistroPersonas(Persona p){
-        personas.add(p);
+    public void agregarPersona(Persona p){
+        this.personas.add(p);
     }
     public sistemaRegistroPersonas(){
-        Persona p = new Persona(" ");
-        personas.add(p);
+        this.personas = new ArrayList<>();
     }
 
     public Persona getPosition(int i){
