@@ -1,0 +1,31 @@
+nav{
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;       
+}
+
+#divMaterias{
+    display: flex;
+    flex-direction: column;
+}
+
+.Materias{
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#nav{
+    font-size: 20px;
+}
+
+.menuToggle{
+    margin-top: 2%;
+    height: 20px;
+    width: 20px;
+}
+
+.fechasLabo{
+    display: none;
+}
