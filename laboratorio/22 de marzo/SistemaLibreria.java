@@ -3,15 +3,26 @@ import java.util.ArrayList;
 public class SistemaLibreria {
     private ArrayList<Cliente> clientes;
     private ArrayList<Libro> libroVenta;
+    private ArrayList<Integer> cantidadLibros;
     private ArrayList<Integer> id;
     private String nombre;
 
 
-    public SistemaLibreria(ArrayList<Cliente> clientes, ArrayList<Libro> libroVenta, ArrayList<Integer> id, String nombre) {
+    public SistemaLibreria(ArrayList<Cliente> clientes, ArrayList<Libro> libroVenta, ArrayList<Integer> cantidadLibros, ArrayList<Integer> id, String nombre) {
         this.clientes = clientes;
         this.libroVenta = libroVenta;
+        this.cantidadLibros = cantidadLibros;
         this.id = id;
         this.nombre = nombre;
+    }
+
+    public SistemaLibreria(ArrayList<Cliente> clientes, ArrayList<Libro> libroVenta, ArrayList<Integer> cantidadLibros, ArrayList<Integer> id) {
+        this.clientes = clientes;
+        this.libroVenta = libroVenta;
+        this.cantidadLibros = cantidadLibros;
+        this.id = id;
+        this.nombre = "Pepe";
+
     }
 
     public SistemaLibreria(){
@@ -29,12 +40,12 @@ public class SistemaLibreria {
         this.clientes = clientes;
     }
 
-    public ArrayList<Libro> getLibroVenta() {
-        return libroVenta;
+    public ArrayList<Integer> getCantidadLibros() {
+        return cantidadLibros;
     }
 
-    public void setLibroVenta(ArrayList<Libro> libroVenta) {
-        this.libroVenta = libroVenta;
+    public void setCantidadLibros(ArrayList<Integer> cantidadLibros) {
+        this.cantidadLibros = cantidadLibros;
     }
 
     public ArrayList<Integer> getId() {

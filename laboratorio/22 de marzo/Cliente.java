@@ -14,6 +14,13 @@ public class Cliente {
         this.librosComprados = librosComprados;
     }
 
+    public Cliente(ArrayList<Libro> librosComprados){
+        this.id = 2;
+        this.nombre = "tomate";
+        this.edad = 12;
+        this.librosComprados = librosComprados;
+    }
+
     public int getId() {
         return id;
     }
@@ -38,5 +45,8 @@ public class Cliente {
         this.edad = edad;
     }
 
+    public int getSize(){
+        return librosComprados.size();
+    }
 
 }

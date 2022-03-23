@@ -79,40 +79,49 @@ public class Main {
             if (i.getPrecio() > 5500.50){
                 System.out.println("Libro con precio mayor a $5500,50: " + i.getNombre());
             }
-        }
 
-        System.out.println("ingrese una letra: ");
-        ingresos = new Scanner(System.in);
-        letra = ingresos.nextLine();
+            System.out.println("ingrese una letra: ");
+            ingresos = new Scanner(System.in);
+            letra = ingresos.nextLine();
 
-
-        for (Libro i: librosArray){
             String letraComparacion = i.getNombre();
             if(letra.charAt(0) == letraComparacion.charAt(0)){
                 System.out.println(letraComparacion);
+            }else System.out.println("No hay libros con ese nombre");
+            System.out.println("Editoriales: ");
+            if (i.getEditorial().equals("ElAteneo") || i.getEditorial().equals("Interzona") || i.getEditorial().equals("Sur y Alianza")) {
+                System.out.println(i.getNombre() + " (" + i.getPrecio() / 2 + ") ");
             }
-        }
+            System.out.println("ingrese el id del libro: ");
+            ingresos = new Scanner(System.in);
+            int idLibroModificar = ingresos.nextInt();
 
-
-        for (Libro i: librosArray){
-            if (i.getEditorial().equals("ElAteneo") || i.getEditorial().equals("Interzona") || i.getEditorial().equals("Sur y Alianza")){
-                System.out.println(i.getNombre() + " (" + i.getPrecio()/2 + ") ");
-            }
-        }
-
-        System.out.println("ingrese el id del libro: ");
-        ingresos = new Scanner(System.in);
-        int idLibroModificar = ingresos.nextInt();
-
-        System.out.println("ingrese el porcentaje de descuento: ");
-        ingresos = new Scanner(System.in);
-        int descuento = ingresos.nextInt();
-
-        for(Libro i: librosArray){
-            if(idLibroModificar == i.getId()){
+            int descuento = 0;
+            System.out.println("ingrese el porcentaje de descuento: ");
+            ingresos = new Scanner(System.in);
+            descuento = ingresos.nextInt();
+            if (idLibroModificar == i.getId()) {
                 float precioOriginal = i.getPrecio();
-                i.setPrecio(precioOriginal -((precioOriginal * descuento)/100));
+                i.setPrecio(precioOriginal - ((precioOriginal * descuento) / 100));
                 System.out.println(i.getPrecio());
+            }
+
+        }
+
+        System.out.println("DESCUENTO DE NAVIDAD? (s/n)");
+        ingresos = new Scanner(System.in);
+        letra = ingresos.nextLine();
+        if(letra.equals("s")){
+            for(Libro i : librosArray){
+                if(i.getId() % 2 == 0){
+                    float precioOriginal = i.getPrecio();
+                    i.setPrecio(precioOriginal - ((precioOriginal * 25) / 100));
+                    System.out.println(i.getPrecio());
+                }else{
+                    float precioOriginal = i.getPrecio();
+                    i.setPrecio(precioOriginal - ((precioOriginal * 35) / 100));
+                    System.out.println(i.getPrecio());
+                }
             }
         }
     }
