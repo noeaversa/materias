@@ -18,10 +18,15 @@
             <a class="Materias">Taller de soporte informatico</a>
         </div>
         <div>
-            <img class="menuToggle" src="menu.png" alt="menu">
-            <a class="Materias">Laboratorio orientado a objetos</a>
+            <img class="menuToggle" id="Laboratorio" src="menu.png" alt="menu">
+            <a class="Materias" >Laboratorio orientado a objetos</a>    
             <div>
                 <p class="fechasLabo" >22 de marzo</p>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Cliente.java" class="codigo"></iframe>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/SistemaLibreria.java" class="codigo"></iframe>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Libro.java" class="codigo"></iframe>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Main.java" class="codigo"></iframe>
+                
                 <p class="fechasLabo">16 de marzo</p>
                 <p class="fechasLabo">9 de marzo</p>
                 <p class="fechasLabo">8 de marzo</p>
@@ -31,8 +36,12 @@
     </div>
 
     <script>
-    $(Image).click(function() {
+    $("#Laboratorio").click(function() {
     $(".fechasLabo").toggle();
+    });
+    
+    $(".fechasLabo").click(function() {
+    $(".codigo").toggle();
     });
     </script>
 </body>

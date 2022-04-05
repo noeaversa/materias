@@ -29,3 +29,9 @@ nav{
 .fechasLabo{
     display: none;
 }
+
+.codigo{
+    display: none;
+    width: 90%;
+    height: 350px;
+}
