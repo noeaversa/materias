@@ -18,8 +18,8 @@ public class Madre extends Persona{
 
     public ArrayList<Hijo> hijosMenores(){
         ArrayList<Hijo> menores = new ArrayList();
-        for(Hijo i: hijos){
-            if(i.getEdad() < 18) menores.add(i);
+        for(Hijo hijoActual: this.hijos){
+            if(hijoActual.getEdad() < 18) menores.add(hijoActual);
         }
         return menores;
     }
