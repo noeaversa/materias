@@ -20,10 +20,10 @@ DELIMITER ;
 call numeroCliente(12);
 
 DELIMITER // 
-create procedure clientesConfiguracion(in clientesIn int)
+create procedure clientesConfiguracion()
 begin
-select * from clientes where clientesIn > 2 and id_cliente in(select id_cliente from pedidos);
+select * from clientes where id_cliente > 2 and id_cliente in(select id_cliente from pedidos);
 end //
 
 DELIMITER ;
-call clientesConfiguracion(56);
+call clientesConfiguracion();
