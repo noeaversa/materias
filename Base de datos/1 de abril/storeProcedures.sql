@@ -1,25 +1,17 @@
 use administracion;
 
 DELIMITER //
-create procedure datosClientes()
+create procedure datosClientes_Producto()
 begin 
 select * from clientes;
+select * from productos;
 end //
 
 DELIMITER ;
 call datosClientes();
 
 DELIMITER //
-create procedure datosProductos()
-begin 
-select * from productos;
-end //
-
-DELIMITER ;
-call datosProductos();
-
-DELIMITER //
-create procedure numeroCliente(IN idC int, OUT idOut int)
+create procedure numeroCliente(IN idC int)
 begin
 select * from cliente where id_cliente = idC;
 end //
