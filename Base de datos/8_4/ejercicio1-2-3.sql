@@ -5,8 +5,8 @@ delimiter //
 create procedure areaRectangulo(in base int, in altura int)
 begin
 	declare area int;
-    set area = base * altura;
-    select area;
+    	set area = base * altura;
+    	select area;
 end //
 
 -- 2:
@@ -25,8 +25,8 @@ end //
 create procedure calculo_promedio(in n1 int, in n2 int, in n3 int)
 begin
 	declare promedio int;
-    set promedio = (n1 + n2 + n3) / 3;
-    select promedio;
+   	set promedio = (n1 + n2 + n3) / 3;
+    	select promedio;
 end //
 delimiter ;
 	
