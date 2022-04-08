@@ -48,7 +48,9 @@ public class SistemaAlmuerzo extends Pedido{
 
         boolean estado = false;
         Pedido pedidoNuevo = new Pedido(fechaCreacionPedido, plato, persona, horaEntrega, estado);
-        pedidos.add(pedidoNuevo);
+        this.pedidos.add(pedidoNuevo);
+
+        System.out.println("el indice de la persona agregada es: " + this.pedidos.size());
     }
 
     public void modificar(){
@@ -58,77 +60,78 @@ public class SistemaAlmuerzo extends Pedido{
         ingresoModificacion = new Scanner(System.in);
         int indice = ingresoModificacion.nextInt();
 
-        for(Integer i = 0; i < this.pedidos.size(); i++){
-            if(i == indice) {
-                System.out.println("que quiere modificar? (P, N, F, H, E)");
-                String opcionModificar = ingresoModificacion.nextLine();
-                String aux;
+        Pedido pedido = this.pedidos.get(indice);
+        this.pedidos.remove(indice);
+        System.out.println("que quiere modificar? (P, N, F, H, E)");
+        String opcionModificar = ingresoModificacion.nextLine();
 
-                switch (opcionModificar) {
-                    case "P":
-                        System.out.println("Ingrese nombre persona: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        aux = ingresoModificacion.nextLine();
-                        Persona personaNueva = new Persona(aux);
-                        pedidos.get(i).setPersona(personaNueva);
-                    case "N":
-                        System.out.println("Ingrese nombre plato: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        aux = ingresoModificacion.nextLine();
-                        Plato platoNuevo = new Plato(aux);
-                        pedidos.get(i).setPlato(platoNuevo);
-                    case "F":
-                        System.out.println("Ingrese año entrega: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        int auxAño = ingresoModificacion.nextInt();
+        switch (opcionModificar) {
+            case "P":
+                System.out.println("Ingrese nombre persona: ");
+                ingresoModificacion = new Scanner(System.in);
+                String nombreCambiado = ingresoModificacion.nextLine();
+                Persona personaCambiada = new Persona(nombreCambiado);
+                pedido.setPersona(personaCambiada);
 
-                        System.out.println("Ingrese mes entrega: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        int auxMes = ingresoModificacion.nextInt();
+            case "N":
+                System.out.println("Ingrese nombre plato: ");
+                ingresoModificacion = new Scanner(System.in);
+                String nombrePlato = ingresoModificacion.nextLine();
+                Plato platoNuevo = new Plato(nombrePlato);
+                pedido.setPlato(platoNuevo);
+            case "F":
+                System.out.println("Ingrese año entrega: ");
+                ingresoModificacion = new Scanner(System.in);
+                int auxAño = ingresoModificacion.nextInt();
 
-                        System.out.println("Ingrese año entrega: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        int auxDia = ingresoModificacion.nextInt();
+                System.out.println("Ingrese mes entrega: ");
+                ingresoModificacion = new Scanner(System.in);
+                int auxMes = ingresoModificacion.nextInt();
 
-                        LocalDate fechaAux = LocalDate.of(auxAño, auxMes, auxDia);
+                System.out.println("Ingrese dia entrega: ");
+                ingresoModificacion = new Scanner(System.in);
+                int auxDia = ingresoModificacion.nextInt();
 
-                        pedidos.get(i).setFechaCreacion(fechaAux);
-                    case "H":
-                        System.out.println("Ingrese hora entrega: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        int auxHora = ingresoModificacion.nextInt();
+                LocalDate fechaAux = LocalDate.of(auxAño, auxMes, auxDia);
+                pedido.setFechaCreacion(fechaAux);
+            case "H":
+                System.out.println("Ingrese hora entrega: ");
+                ingresoModificacion = new Scanner(System.in);
+                int auxHora = ingresoModificacion.nextInt();
 
-                        System.out.println("Ingrese minuto entrega: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        int auxMinuto = ingresoModificacion.nextInt();
+                System.out.println("Ingrese minuto entrega: ");
+                ingresoModificacion = new Scanner(System.in);
+                int auxMinuto = ingresoModificacion.nextInt();
 
-                        LocalTime horaAux = LocalTime.of(auxHora, auxMinuto);
+                LocalTime horaAux = LocalTime.of(auxHora, auxMinuto);
 
-                        pedidos.get(i).setHoraEntrega(horaAux);
-                    case "E":
-                        System.out.println("Ingrese estado: ");
-                        ingresoModificacion = new Scanner(System.in);
-                        boolean estadoAux = ingresoModificacion.nextBoolean();
+                pedido.setHoraEntrega(horaAux);
+            case "E":
+                System.out.println("Ingrese estado: ");
+                ingresoModificacion = new Scanner(System.in);
+                boolean estadoAux = ingresoModificacion.nextBoolean();
 
-                        pedidos.get(i).setEstadoPedido(estadoAux);
-
-                }
-            }
+                pedido.setEstadoPedido(estadoAux);
         }
+        this.pedidos.add(pedido);
+        System.out.println("Su nuevo indice es: " + this.pedidos.size());
     }
     public void eliminar(){
         Scanner ingresoEliminar = new Scanner(System.in);
         System.out.println("Ingrese indice a eliminar: ");
         int indice = ingresoEliminar.nextInt();
-
         pedidos.remove(indice);
     }
 
-    public void imprimirInforme(ArrayList<Plato> platos){
-        Scanner ingresoImprimir = new Scanner(System.in);
-        for(Plato i: platos){
-            System.out.print("Nombre: " + i.getNombre() + " || ");
-            System.out.println("Precio: " + i.getPrecio());
+    public void imprimirInforme(){
+        LocalDate fechaPlatos = LocalDate.now();
+        for(Pedido i: this.pedidos){
+            if(i.getFechaCreacion().equals(fechaPlatos)){
+               Plato platoImprimir = i.getPlato();
+                System.out.println("nombre plato: " + platoImprimir.getNombre());
+                System.out.println("Precio plaro: " + platoImprimir.getPrecio());
+            }
+
         }
     }
 
@@ -151,7 +154,7 @@ public class SistemaAlmuerzo extends Pedido{
             case "c":
                 eliminar();
             case "d":
-                imprimirInforme(platos);
+                imprimirInforme();
         }
     }
 }
