@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="funciones.js"></script>
+    <link rel="icon" href="imagen.jpg">
     <title>Document</title>
 </head>
 <body>
@@ -21,28 +23,45 @@
             <img class="menuToggle" id="Laboratorio" src="menu.png" alt="menu">
             <a class="Materias" >Laboratorio orientado a objetos</a>    
             <div>
-                <p class="fechasLabo" >22 de marzo</p>
-                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Cliente.java" class="codigo"></iframe>
-                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/SistemaLibreria.java" class="codigo"></iframe>
-                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Libro.java" class="codigo"></iframe>
-                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Main.java" class="codigo"></iframe>
+                <p class="fechasLabo" id="5A">5 abril</p>
+                <p style="color: white; size: 5px; display: none; margin-left: 20px;" class="descripcion_5_4" id="descripcion_hijo">Hijo.java</p>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/5_4/Hijo.java" class="codigo29" id="hijo_codigo_abril"></iframe>
+
+                <p style="color: white; size: 5px; display: none; margin-left: 20px;" class="descripcion_5_4" id="descripcion_madre">Madre.java</p>
+
+                <p style="color: white; size: 5px; display: none; margin-left: 20px;" class="descripcion_5_4" id="descripcion_persona">Persona.java</p>
+
+                <p class="fechasLabo" id="29M">29 de Marzo</p>
+    
+                <p style="color: white; size: 5px; display: none; margin-left: 20px;" class="descripcion29" id="pag220">Pag 220 ej8</p>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Cliente.java" class="codigo29" id="ejercicio1"></iframe>
                 
-                <p class="fechasLabo">16 de marzo</p>
+                <p style="color: white; size: 5px; display: none; margin-left: 20px" class="descripcion29" id="pag_266_1">Pag 266 ejercicio 10.7</p>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/29_3/266/main.java" class="codigo29" id="ejercicio2"></iframe>
+                
+                <p style="color: white; size: 5px; display: none; margin-left: 20px" class="descripcion29" id="pag_266_2">Pag 266 ejercicio 10.8</p>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/29_3/266/main2.java" class="codigo29" id="ejercicio3"></iframe>
+                
+                <p class="fechasLabo" id="22M">22 de marzo</p>
+    
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/SistemaLibreria.java" class="codigo22"></iframe>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Libro.java" class="codigo22"></iframe>
+                <iframe src="https://noeaversa.github.io/materias/laboratorio/22_marzo/Main.java" class="codigo22"></iframe>
+                
                 <p class="fechasLabo">9 de marzo</p>
                 <p class="fechasLabo">8 de marzo</p>
 
-            </div>
         </div>
     </div>
 
     <script>
-    $("#Laboratorio").click(function() {
-    $(".fechasLabo").toggle();
-    });
-    
-    $(".fechasLabo").click(function() {
-    $(".codigo").toggle();
-    });
+        hacerToggles(document.getElementById("5A"), document.getElementsByClassName("descripcion_5_4"));
+        hacerToggles(document.getElementById("Laboratorio"), document.getElementsByClassName("fechasLabo"));
+        hacerToggles(document.getElementById("22M"), document.getElementsByClassName("codigo22"));
+        hacerToggles(document.getElementById("29M"), document.getElementsByClassName("descripcion29"));
+        hacerToggles(document.getElementById("pag220"), document.getElementById("ejercicio1"));
+        hacerToggles(document.getElementById("pag_266_1"), document.getElementById("ejercicio2"));
+        hacerToggles(document-getElementById("pag_266_2"), document.getElementById("ejercicio3"));
     </script>
 </body>
 </html>
