@@ -64,16 +64,12 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public boolean esMayorDeEdad(int e2){
-        return this.edad > e2;
+    public boolean esMayorDeEdad(){
+        return this.edad > 17;
     }
 
-    public boolean sonLaMismaPersona(Persona p){
-        return this == p;
-    }
-
-    public boolean tienenLaMismaEdad(int e2){
-        return this.edad == e2;
+    public boolean tienenLaMismaEdad(Persona p){
+        return this.edad == p.getEdad();
     }
 
 }
