@@ -3,3 +3,7 @@ function hacerToggles(click, clickeado){
         $(clickeado).toggle();
     });
 }
+
+function agregarFechas(){
+    
+}
