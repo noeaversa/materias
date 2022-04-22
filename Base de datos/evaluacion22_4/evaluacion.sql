@@ -18,7 +18,7 @@ select count(id_mascota) from mascotas where edad in(select edad from mascotas g
 select count(id_mascota) from mascotas where peso in(select peso from mascotas group by peso);
 
 -- 5:
-select sum(peso) from mascotas where edad < 5 and edad > 10;
+select sum(peso) from mascotas where edad > 5 and edad < 10;
 
 -- 6:
 select avg(peso) from mascotas; 
