@@ -52,6 +52,9 @@ public class Cliente {
         return librosComprados.size();
     }
 
+    public void AgregarCompra(Libro libroNuevo, int cantidad){
+        this.cantidadCompra.put(libroNuevo, cantidad);
+    }
     public HashMap<Libro, Integer> getCantidadCompra() {
         return cantidadCompra;
     }
