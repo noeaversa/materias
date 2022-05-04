@@ -11,7 +11,7 @@ public class Alumno extends Persona{
         this.curso = "5to C";
     }
 
-    public ArrayList<Float> devolverArray(String nombre){
+    public ArrayList<Float> retornarClaveNotas(String nombre){
         ArrayList<Float> arrayListADelvolver = new ArrayList<>();
         arrayListADelvolver = this.notasPorMateria.get(nombre);
         return arrayListADelvolver;
@@ -23,7 +23,7 @@ public class Alumno extends Persona{
         this.notasPorMateria.put(nombreMateria, notasTotales);
     }
 
-    public boolean esMayorOmenor(float n1, float n2){
+    public boolean esMenor(float n1, float n2){
         if(n1 < n2) return true; // es menor
         else return false; // es mayor
     }
