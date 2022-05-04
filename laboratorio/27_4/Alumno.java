@@ -18,7 +18,7 @@ public class Alumno extends Persona{
     }
 
     public void AgregarNota(String nombreMateria, float notaNueva) {
-        ArrayList<Float> notasTotales = devolverArray(nombreMateria);
+        ArrayList<Float> notasTotales = retornarClaveNotas(nombreMateria);
         notasTotales.add(notaNueva);
         this.notasPorMateria.put(nombreMateria, notasTotales);
     }
@@ -29,25 +29,25 @@ public class Alumno extends Persona{
     }
 
     public float menorNota(String NombreMateria){
-        ArrayList<Float> notasTotales = devolverArray(NombreMateria);
+        ArrayList<Float> notasTotales = retornarClaveNotas(NombreMateria);
         float menorNota = 11;
         for(Float i : notasTotales){
-            if(esMayorOmenor(i, menorNota)) menorNota = i;
+            if(esMenor(i, menorNota)) menorNota = i;
         }
         return menorNota;
     }
 
     public Float mayorNota(String nombreMateria){
-        ArrayList<Float> notaasTotales = devolverArray(nombreMateria);
+        ArrayList<Float> notaasTotales = retornarClaveNotas(nombreMateria);
         float mayorNota = 0;
         for(float i: notaasTotales){
-            if(!esMayorOmenor(i, mayorNota)) mayorNota = i;
+            if(!esMenor(i, mayorNota)) mayorNota = i;
         }
         return mayorNota;
     }
 
     public Float promedioNotas(String nombreMateria){
-        ArrayList<Float> notasTotales = devolverArray(nombreMateria);
+        ArrayList<Float> notasTotales = retornarClaveNotas(nombreMateria);
         float promedio = 0;
 
         for(float i: notasTotales){
@@ -56,8 +56,13 @@ public class Alumno extends Persona{
         return promedio;
     }
 
-    public ArrayList<Float> menu(String respuesta){
+    public ArrayList<Float> menu(){
         ArrayList<Float> notas = new ArrayList<>();
+        String respuesta;
+        System.out.println("Desea ingresar notas?(s/n)");
+        Scanner ingresoOpciones = new Scanner(System.in);
+        respuesta = ingresoOpciones.nextLine();
+        
         while(!respuesta.equals("s")){
             System.out.println("ingrese una nota:");
             Scanner ingresoNotas = new Scanner(System.in);
@@ -72,8 +77,7 @@ public class Alumno extends Persona{
     }
 
     public void agregarMateria(String nombreDeMateria){
-        String respuesta = "s";
-        ArrayList<Float> notasNuevas = menu(respuesta);
+        ArrayList<Float> notasNuevas = menu();
         this.notasPorMateria.put(nombreDeMateria, notasNuevas);
     }
 }
