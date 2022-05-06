@@ -21,5 +21,6 @@ end //
 -- 3:
 create procedure borrarLinea()
 Begin
+end //
 
 DELIMITER ;
