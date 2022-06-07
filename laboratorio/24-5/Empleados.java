@@ -47,8 +47,8 @@ public class Empleados extends Persona{
 
     public int porcentajeAsistencia(int mes){
         int porcentaje = 0, suma = 0;
-        for(LocalDateTime i : this.ingresos){
-            if(i.getMonth().getValue() == mes){
+        for(LocalDateTime auxiliar : this.ingresos){
+            if(auxiliar.getMonth().getValue() == mes){
                 suma ++;
             }
         }
