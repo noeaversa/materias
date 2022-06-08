@@ -94,16 +94,10 @@ public class Banco {
         this.fechaOperaciones.put(LocalDateTime.now(), nombreOperacion);
     }
     public void depositarDinero(int dineroADepositar, Cliente clienteQueDeposita) {
-        int dineroTotal = 0;
-        for (Cliente aux : this.visitantesClientes){
-            if (aux.equals(clienteQueDeposita)) {
-                dineroTotal = aux.getDineroCliente() + dineroADepositar;
-                this.visitantesClientes.remove(aux);
-                aux.setDineroCliente(dineroTotal);
-                this.visitantesClientes.add(aux);
-                agregarOperacion("deposito");
-            }
-        }
+        this.visitantesClientes.remove(clienteQueDeposita);
+        clienteQueDeposita.setDineroCliente(clienteQueDeposita.getDineroCliente() + dineroADepositar);
+        this.visitantesClientes.add(clienteQueDeposita);
+        agregarOperacion("deposito");
     }
 
     public void extraerDinero(int dineroAExtraer, Cliente clienteQueExtrae){

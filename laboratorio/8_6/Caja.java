@@ -1,9 +1,10 @@
-public class Caja {
+public class Caja extends Persona{
     private int numeroCaja;
     private Persona personaQueAtiende;
     private boolean esAutomatica;
 
     public Caja(int numeroCaja, Persona personaQueAtiende, boolean esAutomatica) {
+        super();
         this.numeroCaja = numeroCaja;
         this.personaQueAtiende = personaQueAtiende;
         this.esAutomatica = esAutomatica;
