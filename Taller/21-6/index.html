@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lol.js"></script>
+</head>
+<body>
+<h3>CIRCULO: </h3>
+<div class="divs">
+    <img src="circle.png" class="imagenes">
+    <input type="number" placeholder="Ingrese radio" id="radio">
+    <button onclick="CalculoAreaCirculo(document.getElementById('radio').value)"> INGRESAR </button>
+    <p id="textoCirculo"></p>
+
+</div>
+
+<h3 >ESFERA: </h3>
+<div class="divs">
+    <img src="esfera.png" class="imagenes">
+    <input type="number" placeholder="Ingrese radio" id="esfera">
+    <button onclick="CalculoAreaEsfera(document.getElementById('esfera').value)"> INGRESAR </button>
+    <p id="textoEsfera"></p>
+</div>
+
+<h3>Cuadrado: </h3>
+<div class="divs">
+    <img src="cuadrado.png" class="imagenes">
+    <input type="number" placeholder="Ingrese lado" id="cuadrado">
+    <button onclick="CalculoAreaCuadrado(document.getElementById('cuadrado').value)"> INGRESAR </button>
+    <p id="textoCuadrado"></p>
+</div>
+
+<h3> Cubo:</h3>
+<div class="divs">
+    <img src="cubp.png" class="imagenes">
+    <input type="number" placeholder="Ingrese lado" id="cubo">
+    <button onclick="CalculoAreaCubo(document.getElementById('cubo').value)">INGRESAR</button>
+    <p id="textoCubo"></p>
+</div>
+
+<h3>Triangulo: </h3>
+<div class="divs">
+    <img src="triangulo.png" class="imagenes">
+    <input type="number" placeholder="Ingrese altura" id="altura">
+    <input type="number" placeholder="Ingrese base" id="base">
+    <button onclick="CalculoAreaTriangulo(document.getElementById('altura').value, document.getElementById('base').value)"> INGRESAR </button>
+    <p id="textoTriangulo"></p>
+</div>
+</body>
+</html>

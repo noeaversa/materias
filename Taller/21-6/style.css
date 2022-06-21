@@ -1,0 +1,23 @@
+.imagenes{
+    width: 2cm;
+    height: 2cm;
+}
+
+.divs{
+    justify-content: left;
+    align-items: center;
+    display: flex;
+}
+
+h3{
+    font-family: "JetBrains Mono Thin";
+}
+button{
+    margin: 5px;
+    background-color: crimson;
+    border: 1px solid black;
+}
+
+input{
+    margin: 2px;
+}
